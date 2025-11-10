@@ -21,6 +21,16 @@ flowchart TB
         OPDB --> AirflowDQ
     end
 
+    %% ==== AWS ==== 
+    subgraph AWS["AWS"]
+        style AWS fill:#f0f0f0,stroke:#333,stroke-width:1px
+        MySQL["Source Databases | MySQL"]
+        Redshift["Source Databases | Redshift"]
+
+        MySQL --> AirflowETL
+        Redshift --> AirflowETL
+    end
+
     %% ==== GCP DWH (vertical layers) ==== 
     subgraph GCP_DWH["GCP Data Warehouse Platform"]
         style GCP_DWH fill:#e8f4ff,stroke:#333,stroke-width:1px
@@ -389,4 +399,7 @@ flowchart TB
   * システム全体の可視化と分析により、迅速な意思決定をサポート
 
 ---
+
+## データ分析
+[Analytic-Platform](https://github.com/yuanwuab-public/Analytic-Platform)を参照
 
